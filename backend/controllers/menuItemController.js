@@ -3,8 +3,8 @@ const MenuItem = require('../models/MenuItem');
 // Read Menu Item
 const getMenuItem = async (req, res) => {
   try {
-    const menuItems = await MenuItem.find();
-    res.json(menuItems);
+    const menuItem = await MenuItem.find();
+    res.json(menuItem);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -63,5 +63,5 @@ const deleteMenuItem = async (req, res) => {
     }
 };
 
-module.exports = {getMenuItems, addMenuItem, updateMenuItem, deleteMenuItem
+module.exports = {getMenuItem, addMenuItem, updateMenuItem, deleteMenuItem
 };
